@@ -1,8 +1,6 @@
 import { ExternalLink, Linkedin, Twitter, Github, BookOpen, Users, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import Navigation from '@/components/Navigation';
-
 const Social = () => {
   const socialLinks = [
     {
@@ -92,10 +90,8 @@ const Social = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      
-      <div className="pt-32 pb-24">
+    <section id="social" className="py-24 bg-background">
+      <div className="pb-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-serif font-light mb-6 text-surreal">
@@ -240,7 +236,7 @@ const Social = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

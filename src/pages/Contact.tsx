@@ -1,10 +1,9 @@
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, QrCode } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import Navigation from '@/components/Navigation';
 
 const Contact = () => {
   const contactInfo = [
@@ -29,10 +28,8 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-dreamy">
-      <Navigation />
-      
-      <div className="pt-32 pb-24">
+    <section id="contact" className="py-24 bg-dreamy">
+      <div className="pb-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-serif font-light mb-6 text-surreal">
@@ -89,21 +86,36 @@ const Contact = () => {
                 ))}
               </div>
 
-              <div className="float-gentle">
-                <Card className="card-float bg-melting/10 border-primary/20">
-                  <CardContent className="p-6 text-center">
-                    <h3 className="font-serif text-xl font-medium mb-3 text-foreground">
-                      Research Collaboration
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      Open to collaborating on quantum computing and cryptography research projects.
-                    </p>
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                      View Research Interests
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+                <div className="space-y-4">
+                  <Card className="card-float bg-melting/10 border-primary/20">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="font-serif text-xl font-medium mb-3 text-foreground">
+                        Research Collaboration
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        Open to collaborating on quantum computing and cryptography research projects.
+                      </p>
+                      <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                        View Research Interests
+                      </Button>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="card-float border-primary/20">
+                    <CardContent className="p-6 text-center">
+                      <QrCode className="h-12 w-12 mx-auto mb-4 text-primary" />
+                      <h3 className="font-serif text-xl font-medium mb-3 text-foreground">
+                        Quick Contact
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        Scan QR code for instant contact details
+                      </p>
+                      <div className="w-32 h-32 mx-auto bg-muted/20 border border-border rounded-lg flex items-center justify-center">
+                        <span className="text-sm text-muted-foreground">QR Code</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
             </div>
 
             {/* Contact Form */}
@@ -188,7 +200,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
